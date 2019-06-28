@@ -1,0 +1,19 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'dataTables/bootstrap/3/jquery.dataTables.bootstrap';
+
+textarea {
+  overflow-y: auto;
+  height: 400px!important;
+}
+
+h2 {
+  margin-left: 15px;
+}
+
+.right {
+  float: right;
+  margin-right: 15px;
+}

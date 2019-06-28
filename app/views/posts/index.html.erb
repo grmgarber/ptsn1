@@ -1,0 +1,36 @@
+<h2>Posts</h2>
+
+<table class='table table-bordered table-striped dataTable'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Actions: <%= link_to "Create a New Post", new_post_path %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Post.where(user: current_user).each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.category %></td>
+        <td nowrap class="text-center">
+          <%= link_to post_path(post), class: 'item-action' do %>
+            <span class="glyphicon glyphicon-eye-open"></span>View
+          <% end %>
+
+          <%= link_to post_path(post), method: :delete, class: 'item-action',
+                                       data: {confirm: 'This post will be deleted'} do %>
+              <span class="glyphicon glyphicon-remove" style="margin-left: 8px"></span>Delete
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+    $(".dataTable").dataTable({
+        bJQueryUI: true,
+        sPaginationType: "full_numbers"
+    });
+</script>

@@ -1,0 +1,21 @@
+<h2>Show Post</h2>
+
+<%= link_to 'Posts Listing', posts_path, class: 'right' %>
+
+<%= form_with model: @post do |f| %>
+  <div class="form-group col-md-12">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group col-md-12">
+    <%= f.label :category %>
+    <%= f.text_field :category, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group col-md-12">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control', disabled: true %>
+  </div>
+
+<% end %>
